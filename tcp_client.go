@@ -4,7 +4,7 @@ import (
     "net"
     "log"
     "os"
-"github.com/MohammadShoqair/is105sem03/mycrypt"
+"mycrypt/mycrypt"
 )
 
 func main() {
