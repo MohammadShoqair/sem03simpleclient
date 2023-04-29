@@ -4,7 +4,7 @@ import (
     "net"
     "log"
     "os"
-"mycrypt/mycrypt"
+  "mycrypt/mycrypt"
 )
 
 func main() {
@@ -27,6 +27,8 @@ buf := make([]byte, 1024)
     if err != nil {
         log.Fatal(err)
     }
-response := string(buf[:n])
-    log.Printf("Reply from proxy: %s", response)
+bufRunes := []rune(string(buf[:n]))
+
+dekryptertMelding := mycrypt.Krypter(bufRunes, mycrypt.ALF_SEM03, len(mycrypt.ALF_SEM03)-4)
+	log.Println("Dekryptert melding: ", string(dekryptertMelding))
 }
